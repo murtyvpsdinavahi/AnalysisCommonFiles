@@ -5,6 +5,10 @@ function [parameterCombinations,aValsUnique,eValsUnique,sValsUnique,...
 
 load(fullfile(folderExtract,'parameterCombinations.mat'));
 
+if ~exist('rValsUnique','var')
+    rValsUnique=[];
+end
+
 if ~exist('sValsUnique','var')
     sValsUnique=rValsUnique;
 end
@@ -15,10 +19,6 @@ end
 
 if ~exist('tValsUnique','var')
     tValsUnique=[];
-end
-
-if ~exist('rValsUnique','var')
-    rValsUnique=[];
 end
 
 if ~exist('pValsUnique','var')
