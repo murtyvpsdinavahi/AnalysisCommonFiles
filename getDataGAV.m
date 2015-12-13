@@ -11,7 +11,11 @@ function [Data,trialNums,allBadTrials]=getDataGAV(a,e,s,f,o,c,t,aa,ae,as,ao,av,a
     
     trialNums = cell2mat(parameterCombinations(a,e,s,f,o,c,t,aa,ae,as,ao,av,at));
     
-    load(fullfile(folderSegment,'badTrials.mat')); 
+    try
+        load(fullfile(folderSegment,'badTrials.mat')); 
+    catch
+        allBadTrials = cell(size(analogChannels,2),1);
+    end
     
     % Extraction
     if waitbarFlag
